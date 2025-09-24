@@ -25,3 +25,32 @@ void main() {
     }
   }
 }
+
+// Program 1: Cek Bilangan Prima
+void cekPrima() {
+  stdout.write('Masukkan bilangan: ');
+  int angka = int.parse(stdin.readLineSync()!);
+  
+  bool prima = true;
+  if (angka < 2) {
+    prima = false;
+  } else {
+    for (int i = 2; i <= angka ~/ 2; i++) {
+      if (angka % i == 0) {
+        prima = false;
+        break;
+      }
+    }
+  }
+  
+  String hasil = prima ? '$angka adalah bilangan PRIMA'
+                       : '$angka BUKAN bilangan prima';
+  print(hasil);
+
+  // Simpan ke riwayat
+  riwayat.add({
+    'jenis': 'Cek Prima',
+    'input': angka,
+    'hasil': hasil
+  });
+}
