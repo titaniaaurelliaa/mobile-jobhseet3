@@ -1,3 +1,6 @@
+// List untuk menyimpan riwayat
+List<Map<String, dynamic>> riwayat = [];
+
 void main() {
   print('=== PROGRAM SEDERHANA ===');
   
@@ -83,4 +86,23 @@ void hitungFaktorial() {
     'input': angka,
     'hasil': '$hasil'
   });
+}
+
+// Fungsi riwayat
+void tampilkanRiwayat(List<Map<String, dynamic>> riwayat) {
+  print('=== RIWAYAT PERHITUNGAN ===');
+
+  if (riwayat.isEmpty) {
+    print('Belum ada riwayat perhitungan.');
+    return;
+  }
+
+  for (int i = 0; i < riwayat.length; i++) {
+    var data = riwayat[i];
+    print('Data ${i + 1}:');
+    print('  Jenis   : ${data['jenis']}');
+    print('  Input   : ${data['input']}');
+    print('  Hasil   : ${data['hasil']}');
+    print('---');
+  }
 }
