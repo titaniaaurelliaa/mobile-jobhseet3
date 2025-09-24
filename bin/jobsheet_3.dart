@@ -54,3 +54,33 @@ void cekPrima() {
     'hasil': hasil
   });
 }
+
+// Program 2: Hitung Faktorial
+void hitungFaktorial() {
+  stdout.write('Masukkan bilangan: ');
+  int angka = int.parse(stdin.readLineSync()!);
+  
+  if (angka < 0) {
+    print('Tidak bisa menghitung faktorial bilangan negatif');
+    riwayat.add({
+      'jenis': 'Faktorial',
+      'input': angka,
+      'hasil': 'Bilangan negatif'
+    });
+    return;
+  }
+  
+  int hasil = 1;
+  for (int i = 1; i <= angka; i++) {
+    hasil *= i;
+  }
+  
+  print('$angka! = $hasil');
+
+  // Simpan ke riwayat
+  riwayat.add({
+    'jenis': 'Faktorial',
+    'input': angka,
+    'hasil': '$hasil'
+  });
+}
